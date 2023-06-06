@@ -1,0 +1,330 @@
+*{
+  margin: 0;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.colorchange{
+  width: 100vw;
+  height: 100vh;
+  animation: colorloop 10s linear infinite;
+}
+
+.inverter {
+  font-family: Helvetica, sans-serif;
+  font-size: calc(4vh + 3.5vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    background: inherit;
+    -webkit-background-clip: text;
+                    background-clip: text;
+    color: transparent;
+    filter: invert(1) grayscale(1) contrast(10);
+}
+
+.btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  bottom: 15vw;
+  color: white;
+  background: black;
+  border-radius: 20px;
+  border-color: white;
+  border: 6px;
+  cursor: pointer;
+  animation: colorlop 10s linear infinite;
+}
+
+.falana{
+  color: white;
+}
+
+body{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory ;
+  margin: 0;
+  height: 100vh;
+}
+
+.ai-solve{
+position: relative;
+top: 25vw;
+left: 65vw;
+padding: 20px;
+border: none;
+border-radius: 50px;
+}
+
+.ai-solve:hover{
+background: #707070;
+}
+
+.play-game{
+position: relative;
+top: 25vw;
+left: 20vw;
+padding: 20px;
+border: none;
+border-radius: 50px;
+}
+
+.play-game:hover{
+background: #707070;
+}
+
+.main-work{
+  width: 100vw;
+  height: 53.2vw;
+  background-color: black;
+}
+
+@keyframes colorloop {
+      0%		{background: white;}
+      50%		{background: black;}
+      100%	{background: white;}
+}
+
+@keyframes colorlop {
+  0%		{background: rgb(21, 20, 20);}
+  50%		{background: rgb(101, 101, 101);}
+  100%	{background: rgb(21, 20, 20);}
+}
+
+.val{
+position: relative;
+left: 45.4vw;
+top: 8vw;
+padding: 20px;
+border: none;
+background: black;
+color: white;
+border-radius: 50px;
+}
+
+.rev{
+position: absolute;
+left: 10vw;
+top: 10vw;
+size: 50px;
+padding: 30px;
+border: none;
+background: black;
+color: white;
+border-radius: 50px;
+}
+
+.ref{
+position: absolute;
+left: 80vw;
+top: 10vw;
+size: 50px;
+padding: 30px;
+border: none;
+background: black;
+color: white;
+border-radius: 50px;
+}
+
+.validate-message{
+position: relative;
+left: 45.4vw;
+}
+
+#startButton{
+position: relative;
+top: 24vw;
+left: 15vw;
+padding: 30px;
+border: none;
+border-radius: 50px;
+}
+
+#startButton:hover{
+background: #707070;
+}
+
+
+#captureButton{
+position: relative;
+top: 24vw;
+left: 20vw;
+padding: 40px;
+border: none;
+border-radius: 70px;
+}
+
+#captureButton:hover{
+background: #707070;
+}
+
+#solveButton{
+  position: relative;
+  top: 34vw;
+  left: 17vw;
+  padding: 30px;
+  border: none;
+  border-radius: 70px;
+  }
+  
+#solveButton:hover{
+  background: #707070;
+  }
+
+.ai{
+
+width: 100vw;
+height: 53.2vw;
+background-color: rgb(0, 0, 0);
+}
+
+
+.game{
+
+width: 100vw;
+height: 53.2vw;
+background-color: rgb(255, 255, 255);
+}
+
+
+
+.cursor{
+width: 20px;
+height: 20px;
+border: 1px solid white;
+border-radius: 50%;
+position: absolute;
+transition-duration: 150ms;
+transition-timing-function: ease-out;
+animation: cursoeAnim .5s infinite alternate;
+}
+
+.cursor::after{
+content: "";
+width: 20px;
+height: 20px;
+position: absolute;
+border: 8px solid gray;
+border-radius: 50%;
+opacity: .5;
+top: -8px;
+left: -8px;
+animation: cursoeAnim2 .5s infinite alternate;
+}
+
+.expand{
+animation: cursoeAnim3 .5s forwards;
+border: 1px solid red;
+}
+
+@keyframes cursoeAnim {
+from{
+  transform: scale(1);
+}
+to{
+  transform: scale(.7);
+}
+}
+
+
+@keyframes cursoeAnim2 {
+from{
+  transform: scale(1);
+}
+to{
+  transform: scale(.4);
+}
+}
+
+@keyframes cursoeAnim3 {
+0%{
+  transform: scale(1);
+}
+50%{
+  transform: scale(3);
+}
+100%{
+  transform: scale(1);
+  opacity: 0;
+}
+}
+
+.game-title{
+position: relative;
+left: 44vw;
+top: 5vw;
+}
+
+.ai-space{
+position: relative;
+left: 57vw;
+top: 7vw;
+
+}
+
+
+
+/* Styling for Sudoku grid */
+.sudoku-grid {
+display: grid;
+grid-template-columns: repeat(9, 1fr);
+gap: 2px;
+width: 330px;
+margin: 0 auto 10px;
+border: 2px solid #000;
+border-radius: 5px;
+padding: 10px;
+}
+
+.sudoku-cell {
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+font-size: 16px;
+background-color: #fff;
+border: 1px solid #000;
+}
+
+.sudoku-space{
+position: relative;
+top: 13vw;
+}
+
+.sudoku-cell input {
+width: 100%;
+height: 100%;
+border: none;
+text-align: center;
+font-size: 16px;
+padding: 0;
+margin: 0;
+}
+
+.sudoku-cell:nth-child(3n),
+.sudoku-cell:nth-child(6n) {
+border-right: 2px solid #000;
+}
+
+.sudoku-cell:nth-child(9n) {
+border-right: 2px solid #000;
+}
+
+.sudoku-cell:nth-child(9n-8),
+.sudoku-cell:nth-child(9n-7),
+.sudoku-cell:nth-child(9n-6),
+.sudoku-cell:nth-child(9n-5),
+.sudoku-cell:nth-child(9n-4),
+.sudoku-cell:nth-child(9n-3),
+.sudoku-cell:nth-child(9n-2),
+.sudoku-cell:nth-child(9n-1),
+.sudoku-cell:nth-child(9n) {
+border-bottom: 2px solid #000;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <title>sudokult.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="cursor"></div>
+  <div class="colorchange">
+    <h1 class="inverter">
+      SUDOKU-SOLVER
+    </h1>
+    <div class="animated-background">
+      <button class="btn">Let's Get Started</button>
+    </div>
+  </div>
+
+  <div class="main-work">
+    <button class="ai-solve">SOLVE USING AI</button>
+    <button class="play-game">PLAY THE GAME</button>
+  </div>
+
+  <div class="game">
+    <h1 class="game-title">Sudoku Game</h1>
+    <div class="sudoku-space">
+    <div class="sudoku-grid"></div>
+    <button onclick="revealAnswer()" class="rev">Reveal Answer</button>
+  <button onclick="refreshSudoku()" class="ref">Refresh Sudoku</button>
+  <button onclick="validateSudoku()" class="val">Validate Sudoku</button>
+  <p class="validate-message"></p>
+</div>
+  </div>  
+
+  <div class="ai">
+    <button id="startButton">Start Camera</button>
+    <button id="captureButton">Capture</button>
+    <form method="post" action="/">
+    <button type="submit" id="solveButton">Solve</button>
+    </form>
+    <div class="ai-space">
+    <video id="myVideo"></video>
+    <canvas id="myCanvas"></canvas>
+  </div>
+  </div>
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+</html>
